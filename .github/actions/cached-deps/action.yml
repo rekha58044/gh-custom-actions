@@ -20,17 +20,19 @@ outputs:
 runs:
   using: 'composite'
   steps:
+    - name: Debug Python version input
+      shell: bash
+      run: echo "pythonversion INPUT = ->${{ inputs.pythonversion }}<-"
+
     - name: Setup Node.js
       uses: actions/setup-node@v4
-      shell: bash
       with:
         node-version: ${{ inputs.nodeversion }}
 
     - name: Setup Python
-      shell: bash
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ inputs.pythonversion }}
-      run: echo "pythonversion INPUT = ->${{ inputs.pythonversion }}<-"
 
     - name: Output repository owner
       id: repo
