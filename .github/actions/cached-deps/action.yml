@@ -3,11 +3,11 @@ description: this action can be used to setup nodeJs and python
 inputs:
   python-version:
      description: to provide the python version
-     required: false
+     required: true
      default: '3.x'
   node-version:
     description: to provide the node version
-    required: false
+    required: true
     default: '18.x'
 runs:
   using: 'composite'
