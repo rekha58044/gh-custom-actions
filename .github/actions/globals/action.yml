@@ -10,6 +10,10 @@ outputs:
 runs:
   using: 'composite'
   steps:
+  - name: change the permissions
+    shell: bash
+    working-directory: ${{github.action_path}}
+    run: chmod +x ./globals.sh
   - name: run global script
     id: global
     shell: bash
