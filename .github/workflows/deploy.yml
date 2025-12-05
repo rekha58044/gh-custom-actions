@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0   # Ensure full history so the action is up-to-date
 
       - name: Install Python and NodeJS
-        uses: ./.github/actions/cached-deps
+        uses: ./.github/actions/cached-deps-temp
         with:
           pythonversion: 3.9
 
