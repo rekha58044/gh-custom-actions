@@ -31,6 +31,7 @@ runs:
       shell: bash
       with:
         python-version: ${{ inputs.pythonversion }}
+      run: echo "pythonversion INPUT = ->${{ inputs.pythonversion }}<-"
 
     - name: Output repository owner
       id: repo
