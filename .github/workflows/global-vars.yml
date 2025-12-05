@@ -11,5 +11,5 @@ jobs:
        uses: ./.github/actions/globals
      - name: display the values of email and cicd key
        run: |
-        echo "the email id is: ${{ steps.global-variables.outputs.email}}""
+        echo "the email id is: ${{ steps.global-variables.outputs.email}}"
         echo "the CICD key is: ${{ steps.global-variables.outputs.CICDKey}}"
