@@ -26,4 +26,4 @@ jobs:
           python --version
 
       - name: repo owner
-        run: echo "repository owner = {{steps.build-setup.outputs.repoowner}}"
+        run: echo "repository owner = ${{ steps.build-setup.outputs.repoowner }}"
