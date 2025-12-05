@@ -13,7 +13,7 @@ jobs:
         uses: ./.github/actions/cached-deps
         with:
           nodeversion: '18'
-          pythonversion: '3.15'
+          pythonversion: '3.8'
   
   test:
     runs-on: ubuntu-latest
