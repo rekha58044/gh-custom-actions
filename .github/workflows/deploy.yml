@@ -12,8 +12,8 @@ jobs:
       - name: setup node Js and python
         uses: ./.github/actions/cached-deps
         with:
-          nodeversion: 18
-          pythonversion: 3.10
+          nodeversion: '18'
+          pythonversion: '3.10'
   
   test:
     runs-on: ubuntu-latest
