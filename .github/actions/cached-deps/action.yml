@@ -1,16 +1,13 @@
-name: cache dependencies
-description: this action can be used to cache the dependencies
+name: setup nodeJs and python 
+description: this action can be used to setup nodeJs and python
 runs:
   using: 'composite'
   steps:
-   - name: Cache dependencies
-     id: cache
-     uses: actions/cache@v4
+   - name: setup node
+     uses: actions/setup-node@v4
      with:
-       path: node_modules
-       key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
-   - name: Install dependencies
-     if: steps.cache.outputs.cache-hit != 'true'
-     run: npm ci
-     shell: bash
-   
+       node-version: 18.x
+   - name: setup python
+     uses: actions/setup-python@v4
+     with:
+       python-version: 3.x
