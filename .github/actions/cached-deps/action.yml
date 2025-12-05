@@ -4,10 +4,12 @@ inputs:
   python-version:
      description: to provide the python version
      required: true
+     default: '3.x'
      
   node-version:
     description: to provide the node version
     required: true
+    default: '18.x'
    
 runs:
   using: 'composite'
