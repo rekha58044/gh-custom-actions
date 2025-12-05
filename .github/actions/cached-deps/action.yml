@@ -5,12 +5,12 @@ inputs:
   pythonversion:
     description: Python version to install
     required: true
-    default: '3.x'
+    
 
   nodeversion:
     description: Node.js version to install
     required: true
-    default: '18.x'
+    
 
 outputs:
   repoowner:
