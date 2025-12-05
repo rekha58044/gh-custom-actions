@@ -1,21 +1,36 @@
-name: setup nodeJs and python 
-description: this action can be used to setup nodeJs and python
+name: setup nodeJs and python
+description: Set up Node.js and Python
+
 inputs:
-  python-version:
-     description: to provide the python version
-     required: false
-     default: '3.x'
-     
-  node-version:
-    description: to provide the node version
+  pythonversion:
+    description: Python version to install
+    required: false
+    default: '3.x'
+
+  nodeversion:
+    description: Node.js version to install
     required: false
     default: '18.x'
-   
+
+outputs:
+  repoowner:
+    description: displays repository owner
+    value: ${{ steps.repo.outputs.repoowner }}
+
 runs:
   using: 'composite'
   steps:
-   - name: setup node
-     uses: actions/setup-node@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.nodeversion }}
 
-   - name: setup python
-     uses: actions/setup-python@v4
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ inputs.pythonversion }}
+
+    - name: Output repository owner
+      id: repo
+      shell: bash
+      run: echo "repoowner=${{ github.repository_owner }}" >> $GITHUB_OUTPUT
