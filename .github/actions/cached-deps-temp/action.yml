@@ -1,0 +1,42 @@
+name: setup nodeJs and python
+description: Set up Node.js and Python
+
+inputs:
+  pythonversion:
+    description: Python version to install
+    required: true
+    default: '3.x'
+    
+
+  nodeversion:
+    description: Node.js version to install
+    required: true
+    default: '18.x'
+    
+
+outputs:
+  repoowner:
+    description: displays repository owner
+    value: ${{ steps.repo.outputs.repoowner }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Debug Python version input
+      shell: bash
+      run: echo "pythonversion INPUT = ->${{ inputs.pythonversion }}<-"
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.nodeversion }}
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ inputs.pythonversion }}
+
+    - name: Output repository owner
+      id: repo
+      shell: bash
+      run: echo "repoowner=${{ github.repository_owner }}" >> $GITHUB_OUTPUT
