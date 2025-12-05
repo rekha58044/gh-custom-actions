@@ -16,8 +16,7 @@ jobs:
       - name: Install Python and NodeJS
         uses: ./.github/actions/cached-deps
         with:
-          nodeversion: 18.18
-          pythonversion: 3.8
+          pythonversion: 3.9
 
       - name: Verify Node & Python versions
         shell: bash
