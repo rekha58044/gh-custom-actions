@@ -10,5 +10,5 @@ jobs:
     - name: install python and nodeJS
       uses: ./.github/actions/cached-deps
       with:
-        nodeversion: 18.8
+        nodeversion: 18.18
         pythonversion: 3.8
