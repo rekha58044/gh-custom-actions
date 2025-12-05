@@ -14,6 +14,7 @@ jobs:
           fetch-depth: 0   # Ensure full history so the action is up-to-date
 
       - name: Install Python and NodeJS
+        id: build-setup
         uses: ./.github/actions/cached-deps-temp
         with:
           pythonversion: 3.9
@@ -23,3 +24,6 @@ jobs:
         run: |
           node -v
           python --version
+
+      - name: repo owner
+        run: echo "repository owner = {{steps.build-setup.outputs.repoowner}}""
