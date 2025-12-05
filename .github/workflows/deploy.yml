@@ -1,16 +1,26 @@
-name: deploy python and nodeJS
-on: push
-jobs: 
+name: Deploy Python and NodeJS
+on:
+  push:
+    branches:
+      - main
+
+jobs:
   deploy-job:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout code
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Ensure full history so the action is up-to-date
 
-    - name: install python and nodeJS
-      uses: ./.github/actions/cached-deps
-      with:
-        nodeversion: 18.18
-        pythonversion: 3.8
+      - name: Install Python and NodeJS
+        uses: ./.github/actions/cached-deps
+        with:
+          nodeversion: 18.18
+          pythonversion: 3.8
+
+      - name: Verify Node & Python versions
+        shell: bash
+        run: |
+          node -v
+          python --version
