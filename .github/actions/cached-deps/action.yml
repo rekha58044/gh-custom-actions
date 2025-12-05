@@ -27,7 +27,6 @@ runs:
         node-version: ${{ inputs.nodeversion }}
 
     - name: Setup Python
-      uses: actions/setup-python@v4
       shell: bash
       with:
         python-version: ${{ inputs.pythonversion }}
