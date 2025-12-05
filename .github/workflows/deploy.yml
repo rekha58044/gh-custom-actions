@@ -6,6 +6,8 @@ jobs:
     steps:
     - name: checkout code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: install python and nodeJS
       uses: ./.github/actions/cached-deps
