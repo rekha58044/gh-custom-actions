@@ -1,0 +1,17 @@
+name: global action
+description: action to display the gobal values
+outputs:
+  email:
+    description: variabe to print the email-id
+    value: ${{steps.global.outputs.Email}}
+  CICDKey:
+    description: variable to print the CICDKey
+    value: ${{steps.global.outputs.CICDKey}}
+runs:
+  using: 'composite'
+  steps:
+  - name: run global script
+    id: global
+    shell: bash
+    working-directory: ${{github.action_path}}
+    run: ./globals.sh
