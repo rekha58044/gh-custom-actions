@@ -1,0 +1,12 @@
+name: environments-workflow
+on: workflow_dispatch
+jobs:
+  environment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: development
+        run: echo "this is dev"
+      - name: stage
+        run: echo " this is stage"
+      - name: prod
+        run: echo " this is prod"
