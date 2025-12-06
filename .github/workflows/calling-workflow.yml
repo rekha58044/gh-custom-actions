@@ -2,6 +2,4 @@ name: calling workflow
 on: workflow_call
 jobs:
   call-workflow: 
-    uses: ./.github/workflows/calling-workflow.yml
-    
-
+    uses: ./.github/workflows/calling-workflow.yml@main
