@@ -11,10 +11,10 @@ jobs:
     needs: DEV
     steps:
       - name: stage
-        run: echo" this is stage"
+        run: echo "this is stage"
   PROD:
     runs-on: ubuntu-latest
     needs: STAGE
     steps:
       - name: prod
-        run: echo " this is prod"
+        run: echo "this is prod"
