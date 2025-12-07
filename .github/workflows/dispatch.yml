@@ -7,9 +7,19 @@ on:
         type: string
         required: false
         default: 'demo-workflow'
+    gender:
+      name:
+        description: "gender"
+        type: choice
+        required: true
+        options:
+          - male
+          - female
 jobs:
   demo-job:
     runs-on: ubuntu-latest
     steps:
       - name: display
         run: echo "${{inputs.name}}"
+      - name: gender
+        run: echo "${{inputs.gender}}"
