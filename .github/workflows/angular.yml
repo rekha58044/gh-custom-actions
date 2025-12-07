@@ -38,4 +38,4 @@ jobs:
           name: build-artifact
           path: artifacts
       - name: list the build artifacts
-        run: ls - R artifacts
+        run: ls -R artifacts
