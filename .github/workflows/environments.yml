@@ -30,3 +30,4 @@ jobs:
         run: |
           echo "this is dev"
           echo "USERNAME: ${{vars.USERNAME}}"
+          echo "PASSWORD: ${{secrets.USERNAME}}"
