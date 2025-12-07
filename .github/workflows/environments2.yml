@@ -7,4 +7,4 @@ jobs:
     - name: set env variable
       run: echo "COUNT=100000" >> GITHUB_ENV
     - name: display env variable
-      run: echo "count is ${{env.COUNT}}"
+      run: echo count is ${{ env.COUNT }}
