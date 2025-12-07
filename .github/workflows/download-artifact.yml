@@ -10,4 +10,7 @@ jobs:
           name: build-artifact
           path: artifact
           run-id: 20004434845
+          github-token: ${{ github.token}}
+          repository: ${{ github.repository}}
+
     
