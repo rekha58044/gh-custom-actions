@@ -1,25 +1,28 @@
 name: dispatch workflow
+
 on:
- workflow_dispatch:
+  workflow_dispatch:
     inputs:
       name:
         description: "display workflow name"
         type: string
         required: false
-        default: 'demo-workflow'
-    gender:
-      name:
+        default: "demo-workflow"
+
+      gender:
         description: "gender"
         type: choice
         required: true
         options:
           - male
           - female
+
 jobs:
   demo-job:
     runs-on: ubuntu-latest
     steps:
-      - name: display
-        run: echo "${{inputs.name}}"
-      - name: gender
-        run: echo "${{inputs.gender}}"
+      - name: display name
+        run: echo "Name: ${{ inputs.name }}"
+
+      - name: display gender
+        run: echo "Gender: ${{inputs.gender }}"
