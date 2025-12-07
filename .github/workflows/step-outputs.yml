@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: write output
-        id: step-output
-        run: echo "this is an example" >> $GITHUB_OUTPUT
+        id: set-output
+        run: echo "message= this is an example" >> $GITHUB_OUTPUT
       - name: print output
-        run: echo ${{ steps.outputs.step-output}}
+        run: echo ${{ steps.set-output.outputs.message}}
