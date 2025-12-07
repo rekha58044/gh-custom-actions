@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: display name
-        run: echo "Name: ${{ inputs.name }}"
+        run: echo "${{ inputs.name }}"
 
       - name: display gender
-        run: echo "Gender: ${{inputs.gender }}"
+        run: echo " ${{inputs.gender }}"
