@@ -1,0 +1,10 @@
+name: environments-2
+on: push
+jobs:
+  env-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: set env variable
+      run: echo "COUNT=100000" >> GITHUB_ENV
+    - name: display env variable
+      run: echo "count is ${{env.COUNT}}"
