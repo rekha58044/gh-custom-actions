@@ -10,9 +10,6 @@ jobs:
       - name: development
         run: echo "this is dev"
 
-      - name: username
-        run: echo "USERNAME: ${{ vars.USERNAME }}"
-
   STAGE:
     runs-on: ubuntu-latest
     environment: stage
@@ -20,10 +17,6 @@ jobs:
     steps:
       - name: stage
         run: echo "this is stage"
-
-      - name: username
-        run: echo "USERNAME: ${{ vars.USERNAME }}"
-
   PROD:
     runs-on: ubuntu-latest
     environment: prod
@@ -31,6 +24,3 @@ jobs:
     steps:
       - name: prod
         run: echo "this is prod"
-
-      - name: username
-        run: echo "USERNAME: ${{ vars.USERNAME }}"
