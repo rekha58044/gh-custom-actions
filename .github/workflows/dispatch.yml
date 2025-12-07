@@ -6,6 +6,7 @@ on:
         description: "display workflow name"
         type: string
         required: false
+        default: 'demo-workflow'
 jobs:
   demo-job:
     runs-on: ubuntu-latest
