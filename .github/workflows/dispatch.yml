@@ -1,0 +1,14 @@
+name: dispatch workflow
+on:
+ workflow_dispatch:
+    inputs:
+      name:
+        description: "display workflow name"
+        type: string
+        required: true
+jobs:
+  demo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: display
+        run: echo " this is demo job"
