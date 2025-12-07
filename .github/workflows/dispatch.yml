@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: display
-        run: echo " this is demo job"
+        run: echo "${{inputs.name}}"
