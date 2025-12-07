@@ -19,4 +19,4 @@ jobs:
     needs: sample-job
     steps:
       - name: print the output
-        run: echo "The user is: ${{ needs.sample-job.outputs.name }}"
+        run: echo "The user is ${{ needs.sample-job.outputs.name }}"
