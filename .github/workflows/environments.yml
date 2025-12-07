@@ -1,20 +1,36 @@
 name: environments-workflow
+
 on: workflow_dispatch
+
 jobs:
   DEV:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: development
         run: echo "this is dev"
+
+      - name: username
+        run: echo "USERNAME: ${{ vars.USERNAME }}"
+
   STAGE:
     runs-on: ubuntu-latest
+    environment: stage
     needs: DEV
     steps:
       - name: stage
         run: echo "this is stage"
+
+      - name: username
+        run: echo "USERNAME: ${{ vars.USERNAME }}"
+
   PROD:
     runs-on: ubuntu-latest
+    environment: prod
     needs: STAGE
     steps:
       - name: prod
         run: echo "this is prod"
+
+      - name: username
+        run: echo "USERNAME: ${{ vars.USERNAME }}"
